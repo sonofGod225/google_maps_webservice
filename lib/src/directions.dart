@@ -307,17 +307,17 @@ class GeocodedWaypoint {
   final String placeId;
 
   @JsonKey(defaultValue: <String>[])
-  final List<String> types;
+  final List<String>? types;
 
   /// JSON partial_match
   @JsonKey(defaultValue: false)
-  final bool partialMatch;
+  final bool? partialMatch;
 
   GeocodedWaypoint({
     required this.geocoderStatus,
     required this.placeId,
-    this.types = const <String>[],
-    this.partialMatch = false,
+    this.types,
+    this.partialMatch,
   });
 
   factory GeocodedWaypoint.fromJson(Map<String, dynamic> json) =>
